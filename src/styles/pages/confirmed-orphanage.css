@@ -1,0 +1,70 @@
+#page-confirmed-orphanage {
+    background: #37C77F;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#page-confirmed-orphanage .content-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    max-width: 914px;
+    height: 100%;
+    max-height: 490px;
+}
+
+#page-confirmed-orphanage .content-wrapper .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+    width: auto;
+}
+
+#page-confirmed-orphanage .content-wrapper .main h1{
+    font-size: 80px;
+    font-weight: 800;
+    line-height: 80px;
+    padding-bottom: 32px;
+}
+
+#page-confirmed-orphanage .content-wrapper .main p{
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 34px;
+    padding-bottom: 80px;
+}
+
+.content-wrapper .main .enter-map {
+    width: 240px;
+    height: 64px;
+
+    background: #31B272;
+    border-radius: 20px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    color: #fff;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 25px;
+    text-decoration: none;
+
+    transition: background-color 0.2s;
+}
+
+.content-wrapper .main .enter-map:hover {
+    background: #3BD689;
+}
