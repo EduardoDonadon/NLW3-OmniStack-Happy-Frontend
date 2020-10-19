@@ -100,6 +100,30 @@ form.create-orphanage-form .input-block .images-container img {
   border-radius: 20px;
 }
 
+form.create-orphanage-form .input-block .images-container .image-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+form.create-orphanage-form .input-block .images-container .image-container button {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  outline: none;
+  position: absolute;
+  cursor: pointer;
+}
+
+form.create-orphanage-form .input-block .images-container .image-container button .icon {
+  color: #15b6d6;
+  transition: background 0.2s;
+}
+
+form.create-orphanage-form .input-block .images-container .image-container button .icon:hover {
+  color: #138fa8;
+}
+
+
 form.create-orphanage-form .input-block .images-container .new-image {
   height: 96px;
   background: #F5F8FA;

@@ -2,7 +2,7 @@ import React, { ChangeEvent, FormEvent, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Map, Marker, TileLayer } from "react-leaflet";
 import { LeafletMouseEvent } from "leaflet";
-import { FiPlus } from "react-icons/fi";
+import { FiPlus, FiX } from "react-icons/fi";
 
 import api from "../services/api";
 
@@ -27,7 +27,7 @@ export default function CreateOrphanage() {
   
   function handleMapClick(event: LeafletMouseEvent) {
     const { lat, lng } = event.latlng;
-
+    
     setPosition({
       latitude: lat,
       longitude: lng,
@@ -38,12 +38,26 @@ export default function CreateOrphanage() {
     if (!event.target.files) {
       return;
     }
-
+    
     const selectedImages = Array.from(event.target.files);
 
     setImages(selectedImages);
-
+    
     const selectedImagesPreview = selectedImages.map(image => {
+      return URL.createObjectURL(image);
+    });
+
+    setPreviewImages(selectedImagesPreview)
+  }
+
+  function handleRemoveImage(index: number) {
+    let newImages = [...images];
+
+    newImages.splice(index, 1);
+
+    setImages(newImages);
+
+    const selectedImagesPreview = newImages.map(image => {
       return URL.createObjectURL(image);
     });
 
@@ -131,9 +145,14 @@ export default function CreateOrphanage() {
 
               <div className="images-container">
 
-                  {previewImages.map(image => {
+                  {previewImages.map((image, index) => {
                     return (
-                      <img key={image} src={image} alt={name}/>
+                      <div key={image} className="image-container">
+                        <button type="button" onClick={() => handleRemoveImage(index)} className="delete-image">
+                          <FiX size={24} className="icon"/>
+                        </button>
+                        <img src={image} alt={name}/>
+                      </div>
                     )
                   })}
 
